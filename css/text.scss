@@ -1,0 +1,39 @@
+.mario-title {
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 6vw;
+  
+  font-size: calc( 100vw / var(--char-total) );
+  position: relative;
+  padding: 0.4em 0;
+  overflow: hidden;
+  
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-bottom: solid 0.2em;
+    animation: underline 1s cubic-bezier(.8,0,0,1);
+    animation-fill-mode: both;
+    
+    @keyframes underline {
+      from { transform: scaleX(0); }
+    }
+  }
+  
+  .word {
+    display: inline-block;
+    animation: slide-up 1.25s cubic-bezier(.5,.2,0,1);
+    animation-fill-mode: both;
+    animation-delay: calc( .5s + (.1s * var(--word-index)) );
+    
+    @keyframes slide-up {
+      from { transform: translateY(125%); }
+    }
+  }
+}
+
+.splitting-mark { color: #FFF !important; }
