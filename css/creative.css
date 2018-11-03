@@ -115,7 +115,7 @@ img::-moz-selection {
   font-size: .9rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: #212529;
+  color:  #095BC6;
 }
 
 #mainNav .navbar-nav > li.nav-item > a.nav-link:hover,
@@ -136,25 +136,25 @@ img::-moz-selection {
 
 @media (min-width: 992px) {
   #mainNav {
-    border-color: transparent;
-    background-color: transparent;
+    border-color: white;
+    background-color: white;
   }
   #mainNav .navbar-brand {
-    color: rgba(255, 255, 255, 0.7);
+    color:  #095BC6;
   }
   #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-    color: #fff;
+    color: black;
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link {
     padding: 0.5rem 1rem;
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link,
   #mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
-    color: rgba(255, 255, 255, 0.7);
+    color:  #095BC6;
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link:hover,
   #mainNav .navbar-nav > li.nav-item > a.nav-link:focus:hover {
-    color: #fff;
+    color: black;
   }
   #mainNav.navbar-shrink {
     border-bottom: 1px solid rgba(33, 37, 41, 0.1);
@@ -304,6 +304,10 @@ header.masthead p {
   padding: 1rem 2rem;
 }
 
+.btn-l{
+  padding: 1rem 1rem;
+}
+
 .btn-primary {
   background-color: #095BC6;
   border-color: #095BC6;
@@ -317,6 +321,17 @@ header.masthead p {
 .btn-primary:active, .btn-primary:focus {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
   box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
+}
+
+.btn-twitter{
+  background-color: black;
+  color: white;
+  font-weight: 600;
+}
+
+.btn-twitter:hover, .btn-twitter:focus, .btn-twitter:active {
+  color:black;
+  background-color: white !important;
 }
 
 
@@ -442,3 +457,156 @@ h2{
 .slick-arrow.slick-hidden {
     display: none;
 }
+
+/**********************************/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
+
+.mario-title {
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 6vw;
+  font-size: calc(100vw / var(--char-total));
+  position: relative;
+  padding: 0.4em 0;
+  overflow: hidden;
+}
+.mario-title:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-bottom: solid 0.2em;
+  animation: underline 1s cubic-bezier(0.8, 0, 0, 1);
+  animation-fill-mode: both;
+}
+@keyframes underline {
+  from {
+    transform: scaleX(0);
+  }
+}
+.mario-title .word {
+  display: inline-block;
+  animation: slide-up 1.25s cubic-bezier(0.5, 0.2, 0, 1);
+  animation-fill-mode: both;
+  animation-delay: calc(.5s + (.1s * var(--word-index)));
+}
+@keyframes slide-up {
+  from {
+    transform: translateY(125%);
+  }
+}
+.splitting-mark {
+  color: #fff !important;
+}
+
+/************************************/
+
+
+.wrap, .wrap-inner {
+  width: 100%;
+  height: 100%;
+}
+.wrap {
+  display: table;
+}
+.wrap-inner {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+h2 {
+  position: relative;
+  display: inline-block;
+  font-size: 48px;
+  margin-bottom: 40px;
+}
+h2:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -8px;
+  height: 2px;
+  background-color: black;
+  animation: heading-before 4s ease infinite;
+}
+h2:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -8px;
+  right: 0;
+  height: 2px;
+  background-color: black;
+  animation: heading-after 4s ease infinite;
+}
+/*//////// Animations ////////*/
+@keyframes heading-before {
+  0% {
+    right: auto;
+    width: 0;
+    left: 0;
+  }
+  10% {
+    width: 50%;
+  }
+  50% {
+    width: 0;
+    left: 100%;
+  }
+  51% {
+    width: 0;
+    right: 0;
+    left: auto;
+  }
+  60% {
+    width: 50%;
+  }
+  99% {
+    width: 0;
+    right: 100%;
+    left: auto;
+  }
+  100% {
+    right: auto;
+    width: 0;
+    left: 0;
+  }
+}
+@keyframes heading-after {
+  0% {
+    left: auto;
+    width: 0;
+    right: 0;
+  }
+  10% {
+    width: 50%;
+    left: auto;
+  }
+  50% {
+    width: 0;
+    right: 100%;
+    left: auto;
+  }
+  51% {
+    width: 0;
+    left: 0;
+    right: auto;
+  }
+  60% {
+    width: 50%;
+  }
+  99% {
+    width: 0;
+    left: 100%;
+    right: auto;
+  }
+  100% {
+    left: auto;
+    width: 0;
+    right: 0;
+  }
+}
+
+
